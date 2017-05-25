@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+
+import { HomeComponent } from './home/home.component';
+import { SaComponent } from './sa/sa.component';
+import { SpsComponent } from './sps/sps.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+@NgModule({
+  imports: [
+    NativeScriptRouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'sa', component: SaComponent },
+      { path: 'sps', component: SpsComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent }
+    ])
+  ],
+  exports: [NativeScriptRouterModule]
+})
+export class AppRoutingModule {
+
+}
