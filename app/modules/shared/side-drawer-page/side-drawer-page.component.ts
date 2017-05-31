@@ -4,9 +4,9 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from 'nativescript-angular/router';
 
-import { Page } from 'ui/page';
-import { isAndroid, isIOS } from 'platform';
-import { ActionItem } from 'ui/action-bar';
+import { Page } from 'tns-core-modules/ui/page';
+import { isAndroid, isIOS } from 'tns-core-modules/platform';
+import { ActionItem } from 'tns-core-modules/ui/action-bar';
 import {
   RadSideDrawerComponent, SideDrawerType
 } from 'nativescript-telerik-ui/sidedrawer/angular';

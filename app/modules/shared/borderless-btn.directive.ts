@@ -1,8 +1,8 @@
 import { Directive, ElementRef, OnInit, OnDestroy } from '@angular/core';
 
-import { Button } from 'ui/button';
-import { isAndroid } from 'platform';
-import * as application from 'application';
+import { Button } from 'tns-core-modules/ui/button';
+import { isAndroid } from 'tns-core-modules/platform';
+import * as application from 'tns-core-modules/application';
 
 declare const android: any;
 
