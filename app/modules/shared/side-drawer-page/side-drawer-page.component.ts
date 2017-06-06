@@ -11,7 +11,7 @@ import {
   RadSideDrawerComponent, SideDrawerType
 } from 'nativescript-telerik-ui/sidedrawer/angular';
 import {
-  PushTransition, SlideInOnTopTransition
+  PushTransition, FadeTransition
 } from 'nativescript-telerik-ui/sidedrawer';
 
 @Component({
@@ -93,7 +93,7 @@ export class SideDrawerPageComponent implements AfterViewInit, OnDestroy {
 
   private setDrawerTransition() {
     if (isAndroid) {
-      this.drawerTransition = new SlideInOnTopTransition();
+      this.drawerTransition = new PushTransition();
     }
 
     if (isIOS) {
