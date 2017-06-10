@@ -2,44 +2,44 @@
 </MainActionBar>
 
 <RadSideDrawer showOverNavigation="true" [transition]="drawerTransition">
-  <StackLayout tkDrawerContent class="sidedrawer-left">
-    <StackLayout class="sidedrawer-header">
-      <!-- Set src attribute to the logo of the app -->
-      <Image
-          class="sidedrawer-header-image" src="res://logo">
-      </Image>
-      <Label
-          class="sidedrawer-header-brand"
-          text="Tripping Street Tax Calculator">
-      </Label>
-    </StackLayout>
-    <ScrollView>
-      <StackLayout class="sidedrawer-content">
-        <GridLayout
-            class="sidedrawer-list-item"
-            *ngFor="let nav of navMenu">
-          <Button
-              class="sidedrawer-list-item-text borderless-btn"
-              [text]="nav.name"
-              (tap)="navigateTo(nav.commands)">
-          </Button>
-        </GridLayout>
-      </StackLayout>
-    </ScrollView>
+<StackLayout tkDrawerContent class="sidedrawer-left">
+  <StackLayout class="sidedrawer-header">
+    <!-- Set src attribute to the logo of the app -->
+    <Image
+        class="sidedrawer-header-image" src="res://logo">
+    </Image>
+    <Label
+        class="sidedrawer-header-brand"
+        text="Tripping Street Tax Calculator">
+    </Label>
   </StackLayout>
-  <StackLayout tkMainContent>
-    <StackLayout [visibility]="isContentVisible ? 'visible' : 'collapsed'">
-      <ng-content ></ng-content>
+  <ScrollView>
+    <StackLayout class="sidedrawer-content">
+      <GridLayout
+          class="sidedrawer-list-item"
+          *ngFor="let nav of navMenu">
+        <Button
+            class="sidedrawer-list-item-text borderless-btn"
+            [text]="nav.name"
+            (tap)="navigateTo(nav.commands)">
+        </Button>
+      </GridLayout>
     </StackLayout>
-    <GridLayout
-        class="loader-container"
-        [visibility]="!isContentVisible ? 'visible' : 'collapsed'">
-      <ActivityIndicator
-          width="30"
-          height="30"
-          [busy]="!isContentVisible"
-          class="activity-indicator">
-      </ActivityIndicator>
-    </GridLayout>
+  </ScrollView>
+</StackLayout>
+<StackLayout tkMainContent>
+  <StackLayout [visibility]="isContentVisible ? 'visible' : 'collapsed'">
+    <ng-content ></ng-content>
   </StackLayout>
+  <GridLayout
+      class="loader-container"
+      [visibility]="!isContentVisible ? 'visible' : 'collapsed'">
+    <ActivityIndicator
+        width="30"
+        height="30"
+        [busy]="!isContentVisible"
+        class="activity-indicator">
+    </ActivityIndicator>
+  </GridLayout>
+</StackLayout>
 </RadSideDrawer>

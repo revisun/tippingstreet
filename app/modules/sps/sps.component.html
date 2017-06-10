@@ -1,14 +1,83 @@
 <side-drawer-page>
-  <GridLayout class="home-page p-30">
-      <Label row="0" col="0"
-          class="h1 page-text"
-          [text]="text"
-          textWrap="true">
-      </Label>
-  </GridLayout>
-  <GridLayout>
-      <Label row="0" col="0"
-          text = "Lot Size (SQM)">
-      </Label>
-  </GridLayout>
+    <ScrollView>
+<        <StackLayout class="p-10">
+
+            <Label class="h2 text-center" 
+                [text]="text"
+                textWrap="true">
+            </Label>
+
+            <GridLayout class="m-10" verticalAlignment="bottom" columns="auto,*" rows="auto,auto,auto,auto,auto,auto,auto,auto">
+                <div id="entry">
+                    <Label col="0" row="0" 
+                        text = "Desired NET PROCEEDS">
+                    </Label>
+                    <TextField col="1" row="0" data-f
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.netProceeds">
+                    </TextField>
+
+                    <Label col="0" row="1" 
+                        text = "Professional Fee Rate %">
+                    </Label>
+                    <TextField col="1" row="1" 
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.profFeeRate">
+                    </TextField>
+
+                    <Label col="0" row="2" 
+                        text = "Non-Standard Expenses">
+                    </Label>
+                    <TextField col="1" row="2" 
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.nonStdExpenses">
+                    </TextField>
+                </div>
+
+                <div id="results" >
+                    <Label col="0" row="3" 
+                        text = "Capital Gains Tax">
+                    </Label>
+                    <TextField col="1" row="3" 
+                        class="text-right" editable="false"  
+                        [(ngModel)]="this.baLot.capitalGainsTax">
+                    </TextField>
+                    <Label col="0" row="4" 
+                        text = "Docs Stamp">
+                    </Label>
+                    <TextField col="1" row="4" 
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.docsStamp">
+                    </TextField>
+
+                    <Label col="0" row="5" 
+                        text = "Professional Fee">
+                    </Label>
+                    <TextField col="1" row="5" 
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.profFee">
+                    </TextField>
+
+                    <Label col="0" row="6" 
+                        text = "Other Expenses">
+                    </Label>
+                    <TextField col="1" row="6"
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.otherExpenses">
+                    </TextField>
+
+                    <Label col="0" row="7" 
+                        text = "Selling/List Price">
+                    </Label>
+                    <TextField col="1" row="7"  
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.sellPrice">
+                    </TextField>
+                </div>
+            </GridLayout>
+
+            <Button text="Calculate" (tap)="submit()">
+                </Button>
+        </StackLayout>
+    </ScrollView>
 </side-drawer-page>

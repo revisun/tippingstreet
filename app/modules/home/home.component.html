@@ -1,87 +1,83 @@
 <side-drawer-page>
-    <StackLayout class="page p-10">
-        <Label class="h2 text-center" 
-            [text]="text"
-            textWrap="true">
-        </Label>
-
-        <GridLayout class="m-10" verticalAlignment="bottom" columns="auto,*" rows="auto,auto,auto,auto,auto,auto,auto,auto">
-
-            <Label col="0" row="0" 
-                class="font-weight-bold"
-                text = "Lot Size (SQM)">
+    <ScrollView>
+        <StackLayout class="p-10">
+            <Label class="h2 text-center" 
+                [text]="text"
+                textWrap="true">
             </Label>
-            <TextField col="1" row="0" 
-                class="text-right" keyboardType="number"  
-                [(ngModel)]="this.baLot.lotSizeSQM">
-            </TextField>
 
-            <Label col="0" row="1" 
-                class="label font-weight-bold"
-                text = "Selling Price">
-            </Label>
-            <TextField col="1" row="1" 
-                class="text-right" keyboardType="number"  
-                [(ngModel)]="this.baLot.sellPrice">
-            </TextField>
+            <GridLayout class="m-10" verticalAlignment="bottom" columns="auto,*" rows="auto,auto,auto,auto,auto,auto,auto,auto">
+                <div id="entry">
+                    <Label col="0" row="0" 
+                        text = "Lot Size (SQM)">
+                    </Label>
+                    <TextField col="1" row="0" data-f
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.lotSizeSQM">
+                    </TextField>
 
-            <Label col="0" row="2" 
-                class="label font-weight-bold"
-                text = "FMV">
-            </Label>
-            <TextField col="1" row="2" 
-                class="text-right" keyboardType="number"  
-                [(ngModel)]="this.baLot.FMV">
-            </TextField>
+                    <Label col="0" row="1" 
+                        text = "Selling Price">
+                    </Label>
+                    <TextField col="1" row="1" 
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.sellPrice">
+                    </TextField>
 
-            <Label col="0" row="3" 
-                class="label font-weight-bold"
-                text = "Zonal Value">
-            </Label>
-            <TextField col="1" row="3" 
-                class="text-right" keyboardType="number"  
-                [(ngModel)]="this.baLot.zonalValue">
-            </TextField>
+                    <Label col="0" row="2" 
+                        text = "FMV">
+                    </Label>
+                    <TextField col="1" row="2" 
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.FMV">
+                    </TextField>
 
-            <Label col="0" row="4" 
-                class="label font-weight-bold"
-                text = "Transfer Tax">
-            </Label>
-            <TextField col="1" row="4" 
-                class="text-right"  editable="false"
-                [(ngModel)]="this.baLot.transferTax">
-            </TextField>
+                    <Label col="0" row="3" 
+                        text = "Zonal Value">
+                    </Label>
+                    <TextField col="1" row="3" 
+                        class="text-right" keyboardType="number"  
+                        [(ngModel)]="this.baLot.zonalValue">
+                    </TextField>
+                </div>
+                <div id="results" >
+                    <Label col="0" row="4" 
+                        text = "Transfer Tax">
+                    </Label>
+                    <TextField col="1" row="4" borderWidth="0"
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.transferTax">
+                    </TextField>
 
-            <Label col="0" row="5" 
-                class="label font-weight-bold"
-                text = "Registration">
-            </Label>
-            <TextField col="1" row="5" 
-                class="text-right"  editable="false"
-                [(ngModel)]="this.baLot.registration">
-            </TextField>
+                    <Label col="0" row="5" 
+                        text = "Registration">
+                    </Label>
+                    <TextField col="1" row="5" 
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.registration">
+                    </TextField>
 
-            <Label col="0" row="6" 
-                class="label font-weight-bold"
-                text = "TOTAL Amount">
-            </Label>
-            <TextField col="1" row="6" 
-                class="text-right"  editable="false"
-                [(ngModel)]="this.baLot.totalAmt">
-            </TextField>
+                    <Label col="0" row="6" 
+                        text = "TOTAL Amount">
+                    </Label>
+                    <TextField col="1" row="6"
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.totalAmt">
+                    </TextField>
 
-            <Label col="0" row="7" 
-                class="label font-weight-bold"
-                text = "Price per SQM">
-            </Label>
-            <TextField col="1" row="7" 
-                class="text-right"  editable="false"
-                [(ngModel)]="this.baLot.pricePerSQM">
-            </TextField>
-        </GridLayout>
+                    <Label col="0" row="7" 
+                        text = "Price per SQM">
+                    </Label>
+                    <TextField col="1" row="7"  
+                        class="text-right"  editable="false"
+                        [(ngModel)]="this.baLot.pricePerSQM">
+                    </TextField>
+                </div>
+            </GridLayout>
 
-        <Button text="Calculate" class="btn" (tap)="submit()" row="8" colSpan="2">
-        </Button>
+            <Button text="Calculate" (tap)="submit()">
+            </Button>
 
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </side-drawer-page>

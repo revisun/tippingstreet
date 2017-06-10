@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharedModule } from './shared';
 
+
 @NgModule({
   imports: [
     NativeScriptModule,

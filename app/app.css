@@ -12,8 +12,22 @@ refer to http://docs.nativescript.org/ui/theme.
 */
 @import 'nativescript-theme-core/css/core.light.css';
 
+
 .page-text {
     vertical-align: center;
     text-align: center;
 }
 
+#entry Label{
+    font-weight: bold;
+}
+
+#results TextField{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+ActionBar {
+    background-color: seagreen;
+    color: lightgoldenrodyellow;
+}
