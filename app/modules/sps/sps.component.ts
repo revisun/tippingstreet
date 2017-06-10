@@ -29,17 +29,14 @@ export class SpsComponent {
       var vTaxFactor2: number;
 
       vTaxFactor1 = 1 - 0.06 - 0.015 - this.baLot.profFeeRate;
-      console.log(vTaxFactor1);
-      vTaxFactor2 = this.baLot.nonStdExpenses / ((this.baLot.netProceeds/vTaxFactor1)+this.baLot.nonStdExpenses);
-      console.log(vTaxFactor2);
-      console.log(this.baLot.netProceeds/vTaxFactor1);
-      console.log(((this.baLot.netProceeds/vTaxFactor1)+this.baLot.nonStdExpenses))
+      vTaxFactor2 = this.baLot.nonStdExpenses / ((this.baLot.netProceeds/vTaxFactor1) + +this.baLot.nonStdExpenses);
 
-      this.baLot.capitalGainsTax = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*.06).toLocaleString('en', {style:'currency'});
-      this.baLot.docsStamp = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*.015).toLocaleString();
-      this.baLot.profFee = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*this.baLot.profFeeRate).toLocaleString();
-      this.baLot.otherExpenses = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*vTaxFactor2).toLocaleString();
-      this.baLot.sellPrice = (+this.baLot.netProceeds + +this.baLot.capitalGainsTax + +this.baLot.docsStamp + +this.baLot.profFee + +this.baLot.otherExpenses).toLocaleString();
+
+      this.baLot.capitalGainsTax = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*.06).toFixed(2);
+      this.baLot.docsStamp = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*.015).toFixed(2);
+      this.baLot.profFee = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*this.baLot.profFeeRate).toFixed(2);
+      this.baLot.otherExpenses = (this.baLot.netProceeds/(1-.06-.015-this.baLot.profFeeRate-vTaxFactor2)*vTaxFactor2).toFixed(2);
+      this.baLot.sellPrice = Number((+this.baLot.netProceeds + +this.baLot.capitalGainsTax + +this.baLot.docsStamp + +this.baLot.profFee + +this.baLot.otherExpenses).toFixed(2));
 
    }
 
